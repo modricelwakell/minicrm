@@ -64,7 +64,7 @@
                                                 class="text-indigo-600 hover:underline">
                                                 Edit
                                             </a>
-
+                                            @can('delete projects')
                                             <form action="{{ route('projects.destroy', $project) }}" method="POST"
                                                 onsubmit="return confirm('Are you sure you want to delete this project?')">
                                                 @csrf
@@ -75,6 +75,7 @@
                                                     Delete
                                                 </button>
                                             </form>
+                                            @endcan
                                         </div>
                                     </td>
                                 </tr>

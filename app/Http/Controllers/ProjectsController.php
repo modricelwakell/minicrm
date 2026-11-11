@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Gate;
 use App\Enums\ProjectStatus;
 use App\Http\Requests\StoreProjectsRequest;
 use App\Http\Requests\UpdateProjectsRequest;
@@ -53,6 +53,7 @@ class ProjectsController extends Controller
 
     public function destroy(Project $project)
     {
+        Gate::authorize('delete clients');
         $project->delete();
 
         return redirect()->route('projects.index')

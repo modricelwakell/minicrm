@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-
+use Illuminate\Support\Facades\Gate;
 class UserController extends Controller
 {
     /**
@@ -70,7 +70,8 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(User $user)
-    {
+    { 
+        Gate::authorize('delete clients');
         $user->delete();
         return redirect()->route('users.index')->with('success', 'user deleted successfully!');
     }

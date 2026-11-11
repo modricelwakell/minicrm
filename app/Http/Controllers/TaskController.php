@@ -9,7 +9,7 @@ use App\Models\Client;
 use App\Models\Project;
 use App\Models\Task;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Gate;
 class TaskController extends Controller
 {
     /**
@@ -75,6 +75,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
+        Gate::authorize('delete clients');
         $task->delete();
 
         return redirect()->route('tasks.index')

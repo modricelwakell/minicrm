@@ -70,7 +70,7 @@
                                                 class="text-indigo-600 hover:underline">
                                                 Edit
                                             </a>
-
+                                            @can('delete tasks')
                                             <form action="{{ route('tasks.destroy', $task) }}" method="POST"
                                                 onsubmit="return confirm('Are you sure you want to delete this task?')">
                                                 @csrf
@@ -81,6 +81,7 @@
                                                     Delete
                                                 </button>
                                             </form>
+                                            @endcan
                                         </div>
                                     </td>
                                 </tr>

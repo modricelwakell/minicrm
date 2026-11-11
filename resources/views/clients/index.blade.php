@@ -44,7 +44,7 @@
                                         <div class="flex items-center gap-2">
                                             <a href="{{ route('clients.edit', $client) }}"
                                                 class="text-indigo-600 hover:underline">Edit</a>
-
+                                            @can('delete clients')
                                             <form action="{{ route('clients.destroy', $client) }}" method="POST"
                                                 onsubmit="return confirm('Are you sure you want to delete this client?')">
                                                 @csrf
@@ -54,6 +54,7 @@
                                                     Delete
                                                 </button>
                                             </form>
+                                            @endcan
                                         </div>
                                     </td>
                                 </tr>
