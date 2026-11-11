@@ -76,10 +76,20 @@ npm run build
 
 The database seeder creates a default admin account for local development:
 
-- Email: `admin@gmail.com`
-- Password: `password`
+- **Email:** `admin@gmail.com`
+- **Password:** `password`
 
 **Note:** These are demo credentials for local development only. Do not use them in production.
+
+## Screenshots
+
+### Projects Management
+
+![MiniCRM Projects](minicrm-screenshot-1.png)
+
+### Create Task
+
+![MiniCRM Create Task](minicrm-screenshot-2.png)
 
 ## License
 
