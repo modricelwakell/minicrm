@@ -18,7 +18,7 @@ class RoleSeeder extends Seeder
     {
         $adminrole = Role::firstOrCreate(['name' => 'admin']);
         Role::firstOrCreate(['name' => 'user']);
-        $adminuser = User::where('email', 'me9487374@gmail.com')->first();
+        $adminuser = User::where('email', 'admin@gmail.com')->first();
         $adminuser?->assignRole('admin');
         $permissions = [
             'delete users',
